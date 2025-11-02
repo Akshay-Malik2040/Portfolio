@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from "./components/Navbar";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div className='text-amber-300'>Hello World</div>
-    </>
-  )
+    <div className="bg-gray-950 text-gray-100 min-h-screen">
+      <Navbar />
+      
+      <footer className="text-center py-6 text-gray-400 border-t border-gray-800">
+        © 2025 Akshay Malik | Built with ❤️ using React & Tailwind CSS
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
