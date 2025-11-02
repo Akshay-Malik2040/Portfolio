@@ -1,6 +1,8 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero"
 import Projects from "./components/Projects";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -8,6 +10,8 @@ function App() {
       <Navbar />
       <Hero/>
       <Projects/>
+      <About/>
+      <Contact/>
       
       <footer className="text-center py-6 text-gray-400 border-t border-gray-800">
         © 2025 Akshay Malik | Built with ❤️ using React & Tailwind CSS
