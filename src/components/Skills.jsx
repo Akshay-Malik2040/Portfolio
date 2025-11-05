@@ -47,9 +47,9 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative bg-gray-50 py-20">
+    <section id="skills" className="relative bg-white py-20">
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-50 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-size-[40px_40px] opacity-50 pointer-events-none" />
 
       <div className="relative container mx-auto px-6 text-center">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Skills</h2>
@@ -63,7 +63,7 @@ export default function Skills() {
           {skills.map((group, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 text-left hover:shadow-md transition-shadow"
+              className="bg-gray-50 rounded-xl shadow-sm border border-gray-100 p-8 text-left hover:shadow-md transition-shadow"
             >
               <h3 className="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">
                 {group.category}

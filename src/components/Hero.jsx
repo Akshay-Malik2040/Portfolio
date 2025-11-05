@@ -4,7 +4,7 @@ import heroImage from "../assets/heroImage.jpg";
 
 export default function Hero() {
   return (
-    <section className="mt-15 relative bg-white overflow-hidden py-20 border-b">
+    <section className="mt-15 relative bg-white overflow-hidden py-20 border-b-gray-200">
       {/* Background pattern overlay */}
       <div className="absolute inset-0 bg-grid-pattern opacity-70 pointer-events-none mask-b-from-0.5" />
 

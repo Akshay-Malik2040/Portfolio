@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-gray-50 py-12 border-t border-gray-200 mt-20">
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-50 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-size-[40px_40px] opacity-50 pointer-events-none" />
 
       <div className="relative container mx-auto px-6 text-center space-y-6">
         {/* Contact Info */}

@@ -32,9 +32,9 @@ export default function Certificates() {
   const visibleCertificates = expanded ? certificates : certificates.slice(0, 1);
 
   return (
-    <section id="certificates" className="relative bg-white py-20">
+    <section id="certificates" className="relative bg-gray-50 py-20">
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-50 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-size-[40px_40px] opacity-50 pointer-events-none" />
 
       <div className="relative container mx-auto px-6 text-center">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Certificates</h2>
@@ -47,7 +47,7 @@ export default function Certificates() {
           {visibleCertificates.map((cert, index) => (
             <div
               key={index}
-              className="flex justify-between items-center bg-gray-50 border border-gray-100 rounded-lg p-5 mb-4 shadow-sm hover:shadow-md transition-shadow"
+              className="flex justify-between items-center bg-white border border-gray-100 rounded-lg p-5 mb-4 shadow-sm hover:shadow-md transition-shadow"
             >
               <div>
                 <h3 className="text-lg font-semibold text-gray-800">{cert.title}</h3>

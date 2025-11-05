@@ -33,9 +33,9 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative bg-gray-50 py-20 border-b">
+    <section id="projects" className="relative bg-gray-50 py-20">
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-50 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-size-[40px_40px] opacity-50 pointer-events-none" />
 
       <div className="relative container mx-auto px-6">
         {/* Section Header */}

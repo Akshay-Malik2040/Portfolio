@@ -15,6 +15,7 @@ function App() {
       <Projects/>
       <Skills/>
       <Certificates/>
+      <About/>
       <Footer/>
       {/* <Hero/>
       <Projects/>
