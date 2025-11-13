@@ -32,13 +32,27 @@ export default function Certificates() {
   const visibleCertificates = expanded ? certificates : certificates.slice(0, 1);
 
   return (
-    <section id="certificates" className="relative bg-gray-50 py-20">
-      {/* Background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-size-[40px_40px] opacity-50 pointer-events-none" />
+    <section
+      id="certificates"
+      className="relative bg-gray-50 dark:bg-gray-950 py-20 transition-colors duration-300"
+    >
+      {/* Background grid pattern visible in both themes */}
+      <div
+        className="
+          absolute inset-0
+          bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)]
+          dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)]
+          bg-size-[40px_40px]
+          opacity-50
+          pointer-events-none
+        "
+      />
 
       <div className="relative container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Certificates</h2>
-        <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+        <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 transition-colors duration-300">
+          Certificates
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto transition-colors duration-300">
           Recognitions and certifications that validate my continuous learning and skill growth.
         </p>
 
@@ -47,11 +61,20 @@ export default function Certificates() {
           {visibleCertificates.map((cert, index) => (
             <div
               key={index}
-              className="flex justify-between items-center bg-white border border-gray-100 rounded-lg p-5 mb-4 shadow-sm hover:shadow-md transition-shadow"
+              className="
+                flex justify-between items-center
+                bg-white dark:bg-gray-900
+                border border-gray-100 dark:border-gray-800
+                rounded-lg p-5 mb-4
+                shadow-sm hover:shadow-md
+                transition-all duration-300
+              "
             >
               <div>
-                <h3 className="text-lg font-semibold text-gray-800">{cert.title}</h3>
-                <p className="text-sm text-gray-600">
+                <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 transition-colors duration-300">
+                  {cert.title}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 transition-colors duration-300">
                   {cert.issuer} • {cert.year}
                 </p>
               </div>
