@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaReact,
   FaNodeJs,
@@ -19,10 +20,10 @@ const skills = [
     category: "Frontend",
     items: [
       { name: "React.js", icon: <FaReact className="text-blue-500" /> },
-      { name: "JavaScript (ES6+)", icon: <SiJavascript className="text-yellow-500" /> },
+      { name: "JavaScript", icon: <SiJavascript className="text-yellow-500" /> },
       { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
       { name: "CSS3", icon: <FaCss3Alt className="text-blue-400" /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-500" /> },
+      { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-500" /> },
     ],
   },
   {
@@ -31,11 +32,11 @@ const skills = [
       { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
       { name: "Express.js", icon: <SiExpress className="text-gray-700 dark:text-gray-300" /> },
       { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
-      { name: "Databases (SQL/NoSQL)", icon: <FaDatabase className="text-gray-600 dark:text-gray-400" /> },
+      { name: "SQL/NoSQL", icon: <FaDatabase className="text-gray-600 dark:text-gray-400" /> },
     ],
   },
   {
-    category: "Tools & Others",
+    category: "Tools",
     items: [
       { name: "Git & GitHub", icon: <FaGitAlt className="text-orange-500" /> },
       { name: "VS Code", icon: <span className="text-lg">💻</span> },
@@ -49,57 +50,67 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative bg-white dark:bg-gray-900 py-20 transition-colors duration-300"
+      className="relative bg-white dark:bg-gray-900 py-24 transition-colors duration-300"
     >
-      {/* Background grid pattern visible in both themes */}
-      <div
-        className="
-          absolute inset-0
-          bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)]
-          dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]
-          bg-size-[40px_40px]
-          opacity-50
-          pointer-events-none
-        "
-      />
+      {/* Background grid pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
 
       <div className="relative container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 transition-colors duration-300">
-          Skills
-        </h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto transition-colors duration-300">
-          A curated collection of my core technical skills — spanning frontend,
-          backend, and essential tools.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Technical Skills
+          </h2>
+          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full mb-16"></div>
+        </motion.div>
 
-        {/* Skill Categories */}
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-3 gap-8">
           {skills.map((group, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="
-                bg-gray-50 dark:bg-gray-950
-                border border-gray-100 dark:border-gray-800
-                rounded-xl shadow-sm hover:shadow-md
-                p-8 text-left
+                bg-gray-50 dark:bg-gray-800/50
+                backdrop-blur-sm
+                border border-gray-100 dark:border-gray-700
+                rounded-2xl p-8
+                hover:shadow-xl hover:shadow-blue-500/5
                 transition-all duration-300
               "
             >
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 border-b border-gray-200 dark:border-gray-700 pb-2 transition-colors duration-300">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center justify-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
                 {group.category}
               </h3>
-              <ul className="space-y-3">
+
+              <div className="flex flex-wrap justify-center gap-3">
                 {group.items.map((skill, i) => (
-                  <li
+                  <motion.div
                     key={i}
-                    className="flex items-center gap-3 text-gray-700 dark:text-gray-300 text-sm transition-colors duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    className="
+                      flex items-center gap-2
+                      bg-white dark:bg-gray-900
+                      px-4 py-2 rounded-full
+                      shadow-sm border border-gray-100 dark:border-gray-700
+                      text-sm font-medium text-gray-700 dark:text-gray-300
+                      hover:border-blue-500 dark:hover:border-blue-500
+                      transition-colors cursor-default
+                    "
                   >
-                    <span className="text-xl">{skill.icon}</span>
+                    <span className="text-lg">{skill.icon}</span>
                     {skill.name}
-                  </li>
+                  </motion.div>
                 ))}
-              </ul>
-            </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

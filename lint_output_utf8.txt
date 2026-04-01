@@ -1,0 +1,29 @@
+﻿
+> portfolio@0.0.0 lint
+> eslint .
+
+
+C:\Akshay\Preparation\Development\Projects\Portfolio_2\src\App.jsx
+  9:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Akshay\Preparation\Development\Projects\Portfolio_2\src\components\Certificates.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Akshay\Preparation\Development\Projects\Portfolio_2\src\components\Contact.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Akshay\Preparation\Development\Projects\Portfolio_2\src\components\Hero.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u    no-unused-vars
+  4:8   error  'profile2' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Akshay\Preparation\Development\Projects\Portfolio_2\src\components\Projects.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Akshay\Preparation\Development\Projects\Portfolio_2\src\components\Skills.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Akshay\Preparation\Development\Projects\Portfolio_2\src\context\ThemeContext.jsx
+  37:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+Γ£û 8 problems (8 errors, 0 warnings)
+

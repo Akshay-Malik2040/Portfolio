@@ -1,13 +1,12 @@
 import React from "react";
-import profileImage from "../assets/heroImage.jpg"; // ← replace with your image path
+import profileImage from "../assets/heroImage.jpg"; 
 
 export default function About() {
   return (
     <section
       id="about"
-      className="relative bg-white dark:bg-gray-900 py-20 transition-colors duration-300"
+      className="relative bg-gray-50 dark:bg-gray-950 py-20 transition-colors duration-300"
     >
-      {/* Background grid pattern visible in both themes */}
       <div
         className="
           absolute inset-0
@@ -20,7 +19,6 @@ export default function About() {
       />
 
       <div className="relative container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-        {/* Profile Image */}
         <div className="flex-1 flex justify-center md:justify-start">
           <img
             src={profileImage}
@@ -33,7 +31,6 @@ export default function About() {
           />
         </div>
 
-        {/* About Text */}
         <div className="flex-1 text-center md:text-left">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 transition-colors duration-300">
             About Me

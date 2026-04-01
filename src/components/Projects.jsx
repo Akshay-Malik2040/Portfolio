@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
@@ -8,6 +9,8 @@ const projects = [
       "A personal portfolio built with React and Tailwind CSS to showcase my skills, projects, and contact info.",
     tech: ["React", "Tailwind", "Framer Motion"],
     link: "#",
+    github: "#",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "MERN Blog Platform",
@@ -15,6 +18,8 @@ const projects = [
       "A full-stack blog application using the MERN stack with authentication, CRUD functionality, and rich text editing.",
     tech: ["MongoDB", "Express", "React", "Node.js"],
     link: "#",
+    github: "#",
+    image: "https://images.unsplash.com/photo-1499750310159-53f0f6145418?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "E-Commerce Dashboard",
@@ -22,96 +27,133 @@ const projects = [
       "An interactive admin dashboard with analytics, charts, and product management features.",
     tech: ["React", "Chart.js", "Firebase"],
     link: "#",
+    github: "#",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative bg-gray-50 dark:bg-gray-950 py-20 transition-colors duration-300"
+      className="relative bg-gray-50 dark:bg-gray-950 py-24 transition-colors duration-300"
     >
-      {/* Subtle background pattern visible in both modes */}
-      <div
-        className="
-          absolute inset-0
-          bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)]
-          dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]
-          bg-size-[40px_40px]
-          opacity-50
-          pointer-events-none
-        "
-      />
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
 
       <div className="relative container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 transition-colors duration-300">
-            Projects
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Featured Projects
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto transition-colors duration-300">
-            A showcase of my recent work — blending design, development, and functionality.
+          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full mb-6"></div>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+            A showcase of my recent work — blending design, development, and functionality to create impactful digital experiences.
           </p>
-        </div>
+        </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10"
+        >
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.3 }}
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
               className="
-                bg-white dark:bg-gray-900
+                group bg-white dark:bg-gray-900
                 border border-gray-100 dark:border-gray-800
-                rounded-xl shadow-md hover:shadow-xl
+                rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-blue-500/10
                 transition-all duration-300
-                overflow-hidden
+                overflow-hidden flex flex-col
               "
             >
-              {project.image && (
+              <div className="relative overflow-hidden h-48">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
-              )}
+                <div className="absolute bottom-4 right-4 flex gap-3 z-20 translate-y-10 group-hover:translate-y-0 transition-transform duration-300">
+                  <a
+                    href={project.github}
+                    className="p-2 bg-white/90 dark:bg-gray-800/90 rounded-full text-gray-900 dark:text-white hover:text-blue-500 transition-colors"
+                    title="View Code"
+                  >
+                    <Github size={20} />
+                  </a>
+                  <a
+                    href={project.link}
+                    className="p-2 bg-white/90 dark:bg-gray-800/90 rounded-full text-gray-900 dark:text-white hover:text-blue-500 transition-colors"
+                    title="Live Demo"
+                  >
+                    <ExternalLink size={20} />
+                  </a>
+                </div>
+              </div>
 
-              <div className="p-6 space-y-3">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 transition-colors duration-300">
+              <div className="p-6 flex-1 flex flex-col">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-500 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm transition-colors duration-300">
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-1 leading-relaxed">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 pt-2">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
                       className="
-                        text-sm
-                        bg-blue-100 dark:bg-blue-900/30
-                        text-blue-600 dark:text-blue-400
+                        text-xs font-medium
+                        bg-blue-50 dark:bg-blue-900/20
+                        text-blue-600 dark:text-blue-300
                         px-3 py-1 rounded-full
-                        transition-colors duration-300
+                        border border-blue-100 dark:border-blue-800/30
                       "
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-
-                <a
-                  href={project.link}
-                  className="inline-block mt-4 text-blue-500 dark:text-blue-400 font-medium hover:underline transition-colors duration-300"
-                >
-                  View Project →
-                </a>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
