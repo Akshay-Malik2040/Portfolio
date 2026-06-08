@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 export default function Testimonials() {
   const testimonials = [
     {
-      name: "Rohit Sharma",
+      name: "Anshuman Chaudhary",
       role: "Frontend Developer",
       message:
         "Akshay is an exceptional developer. His attention to detail and ability to convert ideas into perfect UI is impressive.",
@@ -12,18 +12,18 @@ export default function Testimonials() {
       img: "https://i.pravatar.cc/100?img=1"
     },
     {
-      name: "Priya Verma",
-      role: "Backend Engineer",
+      name: "Abhishek Kumar Yadav",
+      role: "Worked together on Crowdsourced Hazard Detection System",
       message:
-        "Working with Akshay was smooth and professional. He communicates clearly and delivers work on time.",
+        "Working with Akshay Mallik on our major project was a great experience. He was primarily responsible for the frontend of our Crowdsourced Hazard Detection System, where he developed a seamless interface for collecting citizen reports and mapping hazard hotspots. His technical skills and design sense played a key role in making the system practical and user-friendly.",
       rating: 5,
       img: "https://i.pravatar.cc/100?img=5"
     },
     {
-      name: "Ankit Yadav",
+      name: "Anmol Khurana",
       role: "Project Partner",
       message:
-        "I collaborated with him during a project and he handled the MERN stack part brilliantly.",
+        "I had the opportunity to work with Akshay Malik on the Innotech project, where we developed a Drowsiness Detection System. Akshay demonstrated strong technical skills and a problem-solving mindset throughout the project. His dedication and collaboration played a key role in our success, helping us secure 2nd position at the department level.",
       rating: 4,
       img: "https://i.pravatar.cc/100?img=12"
     }

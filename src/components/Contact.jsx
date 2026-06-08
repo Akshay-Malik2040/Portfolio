@@ -19,16 +19,38 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    console.log("Form Submitted:", formData);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "6a7996f1-82b7-44b7-a446-e0f93a39f394",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
-    setSubmitted(true);
-    setIsSubmitting(false);
-    setFormData({ name: "", email: "", message: "" });
+      const result = await response.json();
 
-    // Reset success message after 3 seconds
-    setTimeout(() => setSubmitted(false), 5000);
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        console.error("Error submitting form:", result);
+        alert("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to send message. Please check your network connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -72,8 +94,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white">Email</h4>
-                    <a href="mailto:akshaymalik.dev@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors">
-                      akshaymalik.dev@gmail.com
+                    <a href="mailto:akshaymalik2040@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors">
+                      akshaymalik2040@gmail.com
                     </a>
                   </div>
                 </div>
@@ -97,7 +119,7 @@ export default function Contact() {
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white">Phone</h4>
                     <p className="text-gray-600 dark:text-gray-400">
-                      +91 98765 43210
+                      +91 6397937798
                     </p>
                   </div>
                 </div>
