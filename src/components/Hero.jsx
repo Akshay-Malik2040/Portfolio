@@ -3,6 +3,7 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import profile3 from "../assets/profile3.jpg";
 
+
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-white dark:bg-gray-950 transition-colors duration-300">

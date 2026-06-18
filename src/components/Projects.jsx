@@ -1,33 +1,34 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import picxkartFront from "../assets/picxkartFront.png";
+import devtinder from "../../public/devtinder.png";
 
 const projects = [
   {
-    title: "Portfolio Website",
+    title: "DevTinder",
     description:
-      "A personal portfolio built with React and Tailwind CSS to showcase my skills, projects, and contact info.",
-    tech: ["React", "Tailwind", "Framer Motion"],
+      "A full-stack developer networking platform that helps developers connect, interact, and collaborate through a secure and scalable web application.",
+    tech: ["React", "Node.js", "Express.js" , "MongoDB" , "JWT" , "bcrypt","Websocket"],
     link: "#",
-    github: "#",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/Akshay-Malik2040/devTinder",
+    image: devtinder,
   },
   {
-    title: "MERN Blog Platform",
+    title: "PicxKart",
     description:
-      "A full-stack blog application using the MERN stack with authentication, CRUD functionality, and rich text editing.",
-    tech: ["MongoDB", "Express", "React", "Node.js"],
-    link: "#",
-    github: "#",
-    image: "https://images.unsplash.com/photo-1499750310159-53f0f6145418?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  },
+"      A media discovery platform that aggregates content from multiple APIs and delivers relevant search results through intelligent keyword matching.",
+    tech: ["React", "Tailwind", "pexels API"],
+    link: "https://picxkartbundle.netlify.app/",
+    github: "https://github.com/Akshay-Malik2040/PicxKart",
+    image: picxkartFront },
   {
-    title: "E-Commerce Dashboard",
+    title: "Safe Shore",
     description:
-      "An interactive admin dashboard with analytics, charts, and product management features.",
-    tech: ["React", "Chart.js", "Firebase"],
+        "An AI-assisted disaster management platform designed to provide critical information, insights, and alerts during emergency situations.",    
+        tech: ["React.js" , "Python" , "NLP" , "REST APIs"],
     link: "#",
-    github: "#",
+    github: "https://github.com/Akshay-Malik2040/SafeShore",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
 ];

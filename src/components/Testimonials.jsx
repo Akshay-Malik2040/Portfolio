@@ -1,5 +1,8 @@
 import React from "react";
 import { Star } from "lucide-react";
+import anshuman from "../../public/anshuman.jpeg"
+import yadav from "../../public/yadav.png"
+import khurana from "../../public/khurana.jpg"
 
 export default function Testimonials() {
   const testimonials = [
@@ -9,7 +12,7 @@ export default function Testimonials() {
       message:
         "Akshay is an exceptional developer. His attention to detail and ability to convert ideas into perfect UI is impressive.",
       rating: 5,
-      img: "https://i.pravatar.cc/100?img=1"
+      img: anshuman
     },
     {
       name: "Abhishek Kumar Yadav",
@@ -17,7 +20,7 @@ export default function Testimonials() {
       message:
         "Working with Akshay Mallik on our major project was a great experience. He was primarily responsible for the frontend of our Crowdsourced Hazard Detection System, where he developed a seamless interface for collecting citizen reports and mapping hazard hotspots. His technical skills and design sense played a key role in making the system practical and user-friendly.",
       rating: 5,
-      img: "https://i.pravatar.cc/100?img=5"
+      img: yadav
     },
     {
       name: "Anmol Khurana",
@@ -25,7 +28,7 @@ export default function Testimonials() {
       message:
         "I had the opportunity to work with Akshay Malik on the Innotech project, where we developed a Drowsiness Detection System. Akshay demonstrated strong technical skills and a problem-solving mindset throughout the project. His dedication and collaboration played a key role in our success, helping us secure 2nd position at the department level.",
       rating: 4,
-      img: "https://i.pravatar.cc/100?img=12"
+      img: khurana
     }
   ];
 

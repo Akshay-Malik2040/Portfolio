@@ -1,32 +1,30 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Award, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
+import AWS from "../../public/AWS.pdf"
+import mongodb from "../../public/mongodb.pdf"
+import mlsa from "../../public/mlsa.pdf"
+import sql from "../../public/sql.pdf"
 
 const certificates = [
   {
-    title: "Full Stack Web Development Bootcamp",
-    issuer: "Udemy",
-    year: "2024",
-    link: "#",
+    title: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    year: "2026",
+    link: AWS,
   },
   {
-    title: "JavaScript (Advanced) Certificate",
-    issuer: "HackerRank",
-    year: "2023",
-    link: "#",
+    title: "MySQL - SQL and Database",
+    issuer: "Infosys Springboard",
+    year: "2025",
+    link: sql,
   },
   {
-    title: "React Frontend Developer Certification",
-    issuer: "freeCodeCamp",
-    year: "2023",
-    link: "#",
-  },
-  {
-    title: "Database Management and SQL Fundamentals",
-    issuer: "Coursera",
-    year: "2022",
-    link: "#",
-  },
+    title: "MongoDB CRUD Operations and Aggregation Framework",
+    issuer: "MongoDB University",
+    year: "2025",
+    link: mongodb,
+  }
 ];
 
 export default function Certificates() {

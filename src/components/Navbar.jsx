@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
+import resume from "../../public/Resume.pdf"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,7 +70,9 @@ const Navbar = () => {
 
           <div className="flex items-center space-x-4">
             <a
-              href="#"
+              href={resume}
+              target="_blank"
+              rel="noreferrer"
               className="px-4 py-2 rounded-full bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30"
             >
               Resume
@@ -110,7 +113,7 @@ const Navbar = () => {
             ))}
             <li>
               <a
-                href="#"
+                href="/Resume.pdf" target="_blank" rel="noreferrer"
                 className="block w-full text-center px-4 py-2 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-600 transition-colors"
               >
                 Resume
