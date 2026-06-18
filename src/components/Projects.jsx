@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import picxkartFront from "../assets/picxkartFront.png";
-import devtinder from "../../public/devtinder.png";
 
 const projects = [
   {
@@ -12,7 +11,7 @@ const projects = [
     tech: ["React", "Node.js", "Express.js" , "MongoDB" , "JWT" , "bcrypt","Websocket"],
     link: "#",
     github: "https://github.com/Akshay-Malik2040/devTinder",
-    image: devtinder,
+    image: "/devtinder.png",
   },
   {
     title: "PicxKart",

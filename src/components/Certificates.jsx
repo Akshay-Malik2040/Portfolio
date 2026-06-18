@@ -1,29 +1,25 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Award, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
-import AWS from "../../public/AWS.pdf"
-import mongodb from "../../public/mongodb.pdf"
-import mlsa from "../../public/mlsa.pdf"
-import sql from "../../public/sql.pdf"
 
 const certificates = [
   {
     title: "AWS Certified Cloud Practitioner",
     issuer: "Amazon Web Services",
     year: "2026",
-    link: AWS,
+    link: "/AWS.pdf",
   },
   {
     title: "MySQL - SQL and Database",
     issuer: "Infosys Springboard",
     year: "2025",
-    link: sql,
+    link: "/sql.pdf",
   },
   {
     title: "MongoDB CRUD Operations and Aggregation Framework",
     issuer: "MongoDB University",
     year: "2025",
-    link: mongodb,
+    link: "/mongodb.pdf",
   }
 ];
 
