@@ -42,6 +42,10 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled || isOpen ? "glass" : "bg-transparent"}`}
+      style={(scrolled || isOpen) ? {
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)"
+      } : {}}
     >
       <div className={`max-w-7xl mx-auto px-6 flex justify-between items-center transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}>
         <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
