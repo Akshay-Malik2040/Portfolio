@@ -9,7 +9,7 @@ export default function Testimonials() {
       message:
         "Akshay is an exceptional developer. His attention to detail and ability to convert ideas into perfect UI is impressive.",
       rating: 5,
-      img: "/anshuman.jpeg"
+      img: "/Anshuman.jpeg"
     },
     {
       name: "Abhishek Kumar Yadav",

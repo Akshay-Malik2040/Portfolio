@@ -41,10 +41,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "glass py-3" : "bg-transparent py-5"
-        }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled || isOpen ? "glass" : "bg-transparent"}`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className={`max-w-7xl mx-auto px-6 flex justify-between items-center transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}>
         <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
           Akshay Malik
         </h1>
@@ -94,8 +93,8 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full glass border-t border-gray-200 dark:border-gray-800 animate-fade-in-down">
-          <ul className="flex flex-col py-4 px-6 space-y-4">
+        <div className="md:hidden w-full border-t border-gray-200 dark:border-gray-800 animate-fade-in-down">
+          <ul className="flex flex-col py-6 px-6 space-y-4">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
