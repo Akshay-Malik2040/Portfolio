@@ -1,7 +1,7 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import profile3 from "../assets/profile3.jpg";
+import profile3 from "../assets/Profile3.jpg";
 
 
 export default function Hero() {
